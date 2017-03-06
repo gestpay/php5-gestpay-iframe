@@ -17,11 +17,8 @@ enable it**.
 
 | File | Description | 
 | ---- |------------ | 
-| `index.php` | This is the main entry point. Since it is only an example, it contains php instructions (executed on
-the server) along with html and javascript code (executed on the client). |
-| `response.php` |  when the payment is completed, Gestpay will redirect to this file to show to the user the payment
-status. `response.php` will decrypt the encrypted string and then it will show the SOAP message received - in the form
-of an array. |
+| `index.php` | This is the main entry point. Since it is only an example, it contains php instructions (executed on the server) along with html and javascript code (executed on the client). |
+| `response.php` |  when the payment is completed, Gestpay will redirect to this file to show to the user the payment status. `response.php` will decrypt the encrypted string and then it will show the SOAP message received - in the form of an array. |
 | `reset.css` and `iFrame.css` | because nobody likes ugly pages |
 | `README.md` | this file |
 
