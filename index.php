@@ -1,13 +1,27 @@
 <!DOCTYPE HTML>
 <?php
-//Check the PARes parameter for 2nd call due to 3D enrolled credit card
-$PARes = $_REQUEST["PaRes"];
-$shopLogin = $_REQUEST["ShopLogin"];
 
 
 //Setting up the basic parameter set to retrieve an encrypted string form GestPay
 $shopLogin = 'GESPAY65987'; //YOUR SHOP LOGIN Eg. production code '9000001' , test code 'gespay0001'
 $testEnv = true; // test or production environment? 
+
+//set the error report to ALL 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+//basic initalization of some parameters that will be used later (Avoid E_NOTICE errors)
+$PARes = NULL;
+$TransKey = NULL;
+
+//Check the PARes parameter for 2nd call due to 3D enrolled credit card
+if (isset($_REQUEST["PaRes"])) {
+    $PARes = $_REQUEST["PaRes"];
+}
+
+// if (isset($_REQUEST["ShopLogin"])) {
+//     $shopLogin = $_REQUEST["ShopLogin"];
+// }
 
 //if $PARes is not empty, we are coming back after 3D security check
 if (strlen($PARes) > 0){
