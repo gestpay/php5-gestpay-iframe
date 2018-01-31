@@ -27,7 +27,7 @@ enable it**.
 1. open `index.php` and set the `$shopLogin` variable (row 9) with your Gestpay shop login. In the same file, you can
 set the environment (*test* or *production*) via the variable `$testEnv`. (Default: `true`)
 2. upload it to a php server with a public ip 
-3. Connect to your [test merchant back-office](http://testecomm.sella.it) and log in 
+3. Connect to your [test merchant back-office](http://sandbox.gestpay.net) and log in 
 4. In *Configuration* > *IP address*, insert the public IP of your server 
 5. In the same page click on *Response Address* and insert:
 	- URL for positive response: `<<your_server_address>>/response.php`

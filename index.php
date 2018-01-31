@@ -169,7 +169,7 @@ if (strlen($PARes) > 0){
                     var c= document.location.href; //this is the landing page where the user will be redirected after the issuer authentication must be ABSOLUTE
                     
                     <?php if ($testEnv) { ?>
-                    var AuthUrl = 'https://testecomm.sella.it/pagam/pagam3d.aspx'; //TESTCODES
+                    var AuthUrl = 'https://sandbox.gestpay.net/pagam/pagam3d.aspx'; //TESTCODES
                     <?php } else { ?>
                     var AuthUrl = 'https://ecomm.sella.it/pagam/pagam3d.aspx'; //PRODUCTION
                     <?php } ?>
