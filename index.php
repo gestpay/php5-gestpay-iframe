@@ -46,7 +46,7 @@ if (strlen($PARes) > 0){
     //setting up the WSLD url
     if ($testEnv === true) {
         //Test
-        $wsdl = "https://testecomm.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx?WSDL";
+        $wsdl = "https://sandbox.gestpay.net/gestpay/gestpayws/WSCryptDecrypt.asmx?WSDL";
     } else {
         //Production
         $wsdl = "https://ecomms2s.sella.it/gestpay/gestpayws/WSCryptDecrypt.asmx?WSDL";
@@ -106,7 +106,7 @@ if (strlen($PARes) > 0){
     <?php } else { ?>
 
         <!-- TEST -->
-        <script type="text/javascript" src="https://testecomm.sella.it/Pagam/JavaScript/js_GestPay.js"></script>
+        <script type="text/javascript" src="https://sandbox.gestpay.net/Pagam/JavaScript/js_GestPay.js"></script>
 
     <?php } ?>
 
@@ -167,8 +167,12 @@ if (strlen($PARes) > 0){
                     var a = '<?php echo($shopLogin) ?>';
                     var b = VBVRisp;
                     var c= document.location.href; //this is the landing page where the user will be redirected after the issuer authentication must be ABSOLUTE
+                    
+                    <?php if ($testEnv) { ?>
                     var AuthUrl = 'https://testecomm.sella.it/pagam/pagam3d.aspx'; //TESTCODES
-                    //var AuthUrl = 'https://ecomm.sella.it/pagam/pagam3d.aspx'; //PRODUCTION
+                    <?php } else { ?>
+                    var AuthUrl = 'https://ecomm.sella.it/pagam/pagam3d.aspx'; //PRODUCTION
+                    <?php } ?>
                     document.location.replace(AuthUrl+'?a='+a+'&b='+b+'&c='+c);
                 }else{
                     //Hide overlapping layer
